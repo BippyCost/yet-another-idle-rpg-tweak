@@ -2084,6 +2084,10 @@ There's another gate on the wall in front of you, but you have a strange feeling
 			{
                 required_clear_count: 4,
                 locations: [{location: "Alligator pit"}]
+            }
+			{
+                required_clear_count: 5,
+                locations: [{location: "Giant snake pit"}]
             }]
     });
     locations["Swampland fields"].connected_locations.push({location: locations["The swamplands"], custom_text: "Wander randomly in the swamplands", travel_time: 45});
@@ -2091,7 +2095,7 @@ There's another gate on the wall in front of you, but you have a strange feeling
 	locations["Alligator pit"] = new Combat_zone({
         description: "A moist, wet pit filled with alligator after alligators. Be careful no to step into a open maw.", 
         enemy_count: 100, 
-        types: [{type: "rough", stage: 2, xp_gain: 7}, {type: "wet", stage: 1}],
+        types: [{type: "rough", stage: 2, xp_gain: 7}, {type: "wet", stage: 1},{type: "dark", stage: 2, xp_gain: 7}],
         enemies_list: ["Alligator"],
 		enemy_group_size: [3,8],
         enemy_stat_variation: 0.2,
@@ -2109,7 +2113,30 @@ There's another gate on the wall in front of you, but you have a strange feeling
         },
 		unlock_text: "You see some alligators crawling out of this dark pit"
 	});
-	locations["Swampland fields"].connected_locations.push({location: locations["Alligator pit"], custom_text: "Go in the the dark pit", travel_time: 60});
+	locations["Swampland fields"].connected_locations.push({location: locations["Alligator pit"], custom_text: "Go in the the dark alligator pit", travel_time: 60});
+
+	locations["Giant Snake pit"] = new Combat_zone({
+        description: "A moist, wet pit filled with giant snakes after giant snakes.", 
+        enemy_count: 100, 
+        types: [{type: "rough", stage: 2, xp_gain: 7}, {type: "wet", stage: 1},{type: "dark", stage: 2, xp_gain: 7}],
+        enemies_list: ["Giant snake"],
+		enemy_group_size: [3,8],
+        enemy_stat_variation: 0.2,
+        is_unlocked: false, 
+        name: "Giant snake pit", 
+        leave_text: "Carefully slither out of the pit",
+        parent_location: locations["Swampland fields"],
+        temperature_modifier: 6.5,
+        temperature_range_modifier: 0.5,
+        first_reward: {
+            xp: 8000,
+        },
+        repeatable_reward: {
+			xp: 4000,
+        },
+		unlock_text: "You see some huge snakes slithering out of this other dark pit"
+	});
+	locations["Swampland fields"].connected_locations.push({location: locations["Giant Snake pit"], custom_text: "Go in the the dark snake pit", travel_time: 60});
 
     locations["Swampland tribe"] = new Location({
         connected_locations: [{location: locations["Swampland fields"], custom_text: "Leave the safety of the settlement and return to the [Swampland fields]", travel_time: 90, travel_time_skills: ["Scrambling", "Running"]}], 
