@@ -567,12 +567,12 @@ const dialogues = {
     "swamptanner unknown answ": "Yes. That would be me. And I know of you -- but I do not know you, nor do I want your help. I need not the blood of the young on my conscience.",
     "swamptanner help": "I'm sure I can handle whatever tasks you need of me.",
     "swamptanner help answ": "Were the young always so eager to die? Fine. If you shan't be wary, then be the fool. Skin five dozen alligators, or feed the bog trying.",
-    "swamptanner deliver 1": "I've got the 60 alligator skins you requested.",
+    "swamptanner deliver 1": "I've got the 30 alligator skins you requested.",
     "swamptanner deliver 1 answ": "You did!? Ah...  \n\n*[The old woman stands up, and with shaky yet strong hands, takes the alligator skins from you, staring at you as she does]*\n\nMy eyes are not as good as they used to be. But now that I see you... You have a strength within. A courageous spirit burning bright; a warrior's heart beating strong. She does too.",
     "swamptanner deliver 1 not": "My eyes may not be as good as they used to be, but I can still count. This is not five dozen, child.",
     "swamptanner known": `Who is "she"?`,
     "swamptanner known answ": "The person I needed these skins for. She needs new armor if she's going to survive out there, next time. I will be honest, child: if I am to make her new armor, I am in need of more; these hides can protect, but not alone. I will need the skins of five dozen snakes as well. But I cannot ask you to go and risk your life again for them. I have seen too many children already...", //"already die trying."
-    "swamptanner deliver 2": "You don't need to worry any longer. I have the 60 snake skins you need.",
+    "swamptanner deliver 2": "You don't need to worry any longer. I have the 30 snake skins you need.",
     "swamptanner deliver 2 answ": "Child... You truly have a mighty soul." 
         +"\n\n*[The old woman stands up, and with ever shaky hands, takes the giant snake skins from you, staring at you as she does]*\n\n"
         +"My eyes are not as good as they used to be. But now that I see your armor... I know not how you survived such brutal attacks. Come. I will teach you how to process the skins you've brought. Surely they will be stronger than whatever it is you're wearing. I may even have some old turtle shells you could practice with. Their shells are very tough, but difficult to... "
