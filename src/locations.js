@@ -2079,10 +2079,11 @@ There's another gate on the wall in front of you, but you have a strange feeling
         rewards_with_clear_requirement: [
             {
                 required_clear_count: 3,
-                locations: [{location: "Swampland tribe"}
+                locations: [{location: "Swampland tribe"}]
+			},
 			{
                 required_clear_count: 4,
-                locations: [{location: "Alligator pit"}
+                locations: [{location: "Alligator pit"}]
             }]
     });
     locations["Swampland fields"].connected_locations.push({location: locations["The swamplands"], custom_text: "Wander randomly in the swamplands", travel_time: 45});
