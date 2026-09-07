@@ -486,7 +486,7 @@ const enemy_abilites = {
         stats: {health: 16750, attack: 830, agility: 250, dexterity: 350, intuition: 120, magic: 0, attack_speed: 1.6, defense: 545},
         loot_list: [
             {item_name: "Alligator meat", chance: 0.08},
-            {item_name: "Alligator skin", chance: 0.05},
+            {item_name: "Alligator skin", chance: 0.08},
         ]
     });
 
