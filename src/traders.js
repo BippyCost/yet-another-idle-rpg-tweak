@@ -461,9 +461,9 @@ class TradeItem {
             new TradeItem({item_name: "Alligator jerky", count: [2,5]}),
 			new TradeItem({item_name: "Alligator skin", count: [2,10]}),
             new TradeItem({item_name: "Snake jerky", count: [2,5]}),
-			new TradeItem({item_name: "Giant Snake skin", count: [2,10]}),
+			new TradeItem({item_name: "Giant snake skin", count: [2,10]}),
             new TradeItem({item_name: "Turtle jerky", count: [2,5]}),
-			new TradeItem({item_name: "Turtle Shell", count: [2,10]}),
+			new TradeItem({item_name: "Turtle shell", count: [2,10]}),
 
             new TradeItem({item_name: "Cooking herbs", count: [3,6]}),
             new TradeItem({item_name: "Wild onion", count: [3,6]}),
