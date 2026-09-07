@@ -2078,7 +2078,7 @@ class DialogueAction extends GameAction {
                     unable_to_begin: ["swamptanner deliver 1 not"],
                 },
                 required: {
-                    items_by_id: {"Alligator skin": {count: 60, remove_on_success: true}},
+                    items_by_id: {"Alligator skin": {count: 30, remove_on_success: true}},
                 },
                 attempt_duration: 0,
                 success_chances: [1],
@@ -2098,7 +2098,7 @@ class DialogueAction extends GameAction {
                     unable_to_begin: ["swamptanner deliver 2 not"],
                 },
                 required: {
-                    items_by_id: {"Giant snake skin": {count: 60, remove_on_success: true}},
+                    items_by_id: {"Giant snake skin": {count: 30, remove_on_success: true}},
                 },
                 attempt_duration: 0,
                 success_chances: [1],
