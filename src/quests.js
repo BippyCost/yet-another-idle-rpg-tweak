@@ -513,9 +513,9 @@ const questManager = {
             new QuestTask({task_description: "Speak to the tailor and see how you can help"}), //flax delivery part 1
             new QuestTask({task_description: "Bring the tailor 200 bundles of fresh flax"}), //flax delivery part 2
             new QuestTask({task_description: "Speak to the tanner and see how you can help"}), //tanner delivery part 1
-            new QuestTask({task_description: "Bring the tanner 60 pieces of alligator skin"}), //tanner delivery part 2
+            new QuestTask({task_description: "Bring the tanner 30 pieces of alligator skin"}), //tanner delivery part 2
             new QuestTask({is_hidden: true}), //filler after bringing alligator skin, before being told to bring snake skin
-            new QuestTask({task_description: "Bring the tanner 60 pieces of giant snake skin"}), //tanner delivery part 3
+            new QuestTask({task_description: "Bring the tanner 30 pieces of giant snake skin"}), //tanner delivery part 3
             new QuestTask({task_description: "Report to the chief"}), //properly finishes the quest, rewards come in dialogue
         ]
     });
