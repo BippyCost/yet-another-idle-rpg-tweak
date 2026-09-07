@@ -2084,10 +2084,10 @@ There's another gate on the wall in front of you, but you have a strange feeling
 			{
                 required_clear_count: 4,
                 locations: [{location: "Alligator pit"}]
-            }
+            },
 			{
                 required_clear_count: 5,
-                locations: [{location: "Giant snake pit"}]
+                locations: [{location: "Giant Snake pit"}]
             }]
     });
     locations["Swampland fields"].connected_locations.push({location: locations["The swamplands"], custom_text: "Wander randomly in the swamplands", travel_time: 45});
