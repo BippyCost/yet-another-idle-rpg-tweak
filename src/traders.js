@@ -459,33 +459,37 @@ class TradeItem {
 	inventory_templates["Swamp plus"] = 
     [
             new TradeItem({item_name: "Alligator jerky", count: [2,5]}),
+			new TradeItem({item_name: "Alligator skin", count: [2,10]}),
             new TradeItem({item_name: "Snake jerky", count: [2,5]}),
+			new TradeItem({item_name: "Giant Snake skin", count: [2,10]}),
             new TradeItem({item_name: "Turtle jerky", count: [2,5]}),
+			new TradeItem({item_name: "Turtle Shell", count: [2,10]}),
 
             new TradeItem({item_name: "Cooking herbs", count: [3,6]}),
             new TradeItem({item_name: "Wild onion", count: [3,6]}),
             new TradeItem({item_name: "Wild garlic", count: [3,6]}),
             new TradeItem({item_name: "Wild potato", count: [5,9]}),
 
-            new TradeItem({item_name: "Alligator armor", count: [1], quality: [70, 100], chance: 0.05}),
-            new TradeItem({item_name: "Alligator helmet", count: [1], quality: [70, 100], chance: 0.05}),
-            new TradeItem({item_name: "Alligator armored pants", count: [1], quality: [70, 100], chance: 0.05}),
+            new TradeItem({item_name: "Alligator armor", count: [1], quality: [80, 120], chance: 0.7}),
+            new TradeItem({item_name: "Alligator helmet", count: [1], quality: [80, 120], chance: 0.7}),
+            new TradeItem({item_name: "Alligator armored pants", count: [1], quality: [80, 120], chance: 0.7}),
 
-            new TradeItem({item_name: "Turtleshell platemail armor", count: [1], quality: [70, 100], chance: 0.01}),
-            new TradeItem({item_name: "Turtleshell platemail helmet", count: [1], quality: [70, 100], chance: 0.01}),
-            new TradeItem({item_name: "Turtleshell platemail pants", count: [1], quality: [70, 100], chance: 0.01}),
-            new TradeItem({item_name: "Turtleshell shield", count: [1], quality: [70, 100], chance: 0.01}),
+            new TradeItem({item_name: "Turtleshell platemail armor", count: [1], quality: [80, 120], chance: 0.7}),
+            new TradeItem({item_name: "Turtleshell platemail helmet", count: [1], quality: [80, 120], chance: 0.7}),
+            new TradeItem({item_name: "Turtleshell platemail pants", count: [1], quality: [80, 120], chance: 0.7}),
+            new TradeItem({item_name: "Turtleshell shield", count: [1], quality: [80, 100], chance: 0.7}),
 
             new TradeItem({item_name: "Shellfish desires", count: [1], chance: 0.5}),
+			new TradeItem({item_name: "Wood for Witches", count: [1], chance: 0.8}),
 
-            new TradeItem({item_name: "Healing balm", count: [1,2], chance: 0.15}),
-            new TradeItem({item_name: "Healing powder", count: [1,3], chance: 0.2}),
-            new TradeItem({item_name: "Healing potion", count: [1,3], chance: 0.25}),
+            new TradeItem({item_name: "Healing balm", count: [1,2], chance: 0.8}),
+            new TradeItem({item_name: "Healing powder", count: [1,3], chance: 0.8}),
+            new TradeItem({item_name: "Healing potion", count: [1,3], chance: 0.8}),
 
-            new TradeItem({item_name: "Oneberry", count: [1,4], chance: 0.1}),
-            new TradeItem({item_name: "Silver thistle", count: [1,3], chance: 0.1}),
-            new TradeItem({item_name: "Golmoon leaf", count: [1,3], chance: 0.1}),
-            new TradeItem({item_name: "Belmart leaf", count: [1,3], chance: 0.1}),
+            new TradeItem({item_name: "Oneberry", count: [1,4], chance: 0.9}),
+            new TradeItem({item_name: "Silver thistle", count: [1,3], chance: 0.9}),
+            new TradeItem({item_name: "Golmoon leaf", count: [1,3], chance: 0.9}),
+            new TradeItem({item_name: "Belmart leaf", count: [1,3], chance: 0.9}),
     ];
 
     inventory_templates["Cat cafe"] = 
