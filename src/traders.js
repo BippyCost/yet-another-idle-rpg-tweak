@@ -241,7 +241,7 @@ class TradeItem {
             new TradeItem({item_name: "Wolf leather armored pants", count: [1], chance: 0.3, quality: [60, 120]}),
             new TradeItem({item_name: "Wolf leather helmet", count: [1], chance: 0.3, quality: [60, 120]}),
 
-            new TradeItem({item_name: "Rat pelt cape", count: [1,3], chance: 1, quality: [70, 120]}),
+            new TradeItem({item_name: "Imp hide cape", count: [1,3], chance: 1, quality: [70, 120]}),
 
             new TradeItem({item_name: "Stale bread", count: [7,14]}),
             new TradeItem({item_name: "Bread kwas", count: [3,5], chance: 0.6}),
@@ -317,7 +317,7 @@ class TradeItem {
             new TradeItem({item_name: "Wolf leather armored pants", count: [1], chance: 0.8, quality: [91, 120]}),
             new TradeItem({item_name: "Wolf leather helmet", count: [1], chance: 0.8, quality: [91, 120]}),
 
-            new TradeItem({item_name: "Rat pelt cape", count: [1,2], chance: 0.6, quality: [70, 120]}),
+            new TradeItem({item_name: "Imp hide cape", count: [1,2], chance: 0.6, quality: [70, 120]}),
             new TradeItem({item_name: "Wolf pelt cape", count: [1], chance: 0.9, quality: [70, 120]}),
             
             new TradeItem({item_name: "Iron chainmail armor", count: [1], chance: 0.8, quality: [40, 80]}),

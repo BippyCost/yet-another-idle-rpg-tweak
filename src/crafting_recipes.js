@@ -815,7 +815,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     crafting_recipes.equipment["Shirt"] = new ComponentRecipe({
         name: "Shirt",
         materials: [
-            {material_id: "Piece of wolf rat leather", count: 5, result_id: "Cheap leather vest"},
+            {material_id: "Piece of imp hide", count: 5, result_id: "Cheap leather vest"},
             {material_id: "Piece of wolf leather", count: 5, result_id: "Leather vest"},
             {material_id: "Wool cloth", count: 5, result_id: "Wool shirt"},
             {material_id: "Piece of goat leather", count: 5, result_id: "Goat leather vest"},
@@ -831,7 +831,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     crafting_recipes.equipment["Pants"] = new ComponentRecipe({
         name: "Pants",
         materials: [
-            {material_id: "Piece of wolf rat leather", count: 3, result_id: "Cheap leather pants"},
+            {material_id: "Piece of imp hide", count: 3, result_id: "Cheap leather pants"},
             {material_id: "Piece of wolf leather", count: 3, result_id: "Leather pants"},
             {material_id: "Wool cloth", count: 3, result_id: "Wool pants"},
             {material_id: "Piece of goat leather", count: 3, result_id: "Goat leather pants"},
@@ -862,7 +862,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     crafting_recipes.equipment["Shoes"] = new ComponentRecipe({
         name: "Shoes",
         materials: [
-            {material_id: "Piece of wolf rat leather", count: 2, result_id: "Cheap leather shoes"},
+            {material_id: "Piece of imp hide", count: 2, result_id: "Cheap leather shoes"},
             {material_id: "Piece of wolf leather", count: 2, result_id: "Leather shoes"},
             {material_id: "Piece of goat leather", count: 2, result_id: "Goat leather shoes"},
             {material_id: "Piece of frog leather", count: 2, result_id: "Batrachian shoes" },
@@ -888,7 +888,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     crafting_recipes.equipment["Cape"] = new ComponentlessEquipRecipe({
         name: "Cape",
         materials: [
-            {material_id: "Processed rat pelt", count: 12, result_id: "Rat pelt cape"},
+            {material_id: "Processed imp hide", count: 12, result_id: "Imp hide cape"},
             {material_id: "Processed wolf pelt", count: 8, result_id: "Wolf pelt cape"},
             {material_id: "Processed boar hide", count: 8, result_id: "Boar hide cape"},
             {material_id: "Processed goat hide", count: 8, result_id: "Goat hide cape"},
@@ -902,11 +902,11 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
 
 //materials
 (function(){
-    butchering_recipes.items["Piece of wolf rat leather"] = new ItemRecipe({
-        name: "Piece of wolf rat leather",
+    butchering_recipes.items["Piece of imp hide"] = new ItemRecipe({
+        name: "Piece of imp hide",
         recipe_type: "material",
-        materials: [{material_id: "Rat pelt", count: 3}], 
-        result: {result_id: "Piece of wolf rat leather", count: 1},
+        materials: [{material_id: "Imp hide", count: 3}],
+        result: {result_id: "Piece of imp hide", count: 1},
         success_chance: [0.5,1],
         recipe_level: [1,5],
         recipe_skill: "Butchering",
@@ -988,11 +988,11 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
         recipe_level: [27,37],
     });
 
-    butchering_recipes.items["Processed rat pelt"] = new ItemRecipe({
-        name: "Processed rat pelt",
+    butchering_recipes.items["Processed imp hide"] = new ItemRecipe({
+        name: "Processed imp hide",
         recipe_type: "material",
-        materials: [{material_id: "Rat pelt", count: 3}],
-        result: {result_id: "Processed rat pelt", count: 1},
+        materials: [{material_id: "Imp hide", count: 3}],
+        result: {result_id: "Processed imp hide", count: 1},
         success_chance: [0.5,1],
         recipe_level: [1,5],
         recipe_skill: "Butchering",
@@ -1105,7 +1105,7 @@ function get_recipe_xp_value({category, subcategory, recipe_id, material_count, 
     butchering_recipes.items["Rat meat chunks"] = new ItemRecipe({
         name: "Rat meat chunks",
         recipe_type: "material",
-        materials: [{material_id: "Rat tail", count: 2}],
+        materials: [{material_id: "Imp tail", count: 2}],
         result: {result_id: "Rat meat chunks", count: 1},
         success_chance: [0.5,1],
         recipe_level: [1,5],
@@ -1848,6 +1848,10 @@ const recipes = {
     butchering: butchering_recipes,
     woodworking: woodworking_recipes,
 }
+
+// Keep old saved recipe references valid after the infernal loot rename.
+butchering_recipes.items["Piece of wolf rat leather"] = butchering_recipes.items["Piece of imp hide"];
+butchering_recipes.items["Processed rat pelt"] = butchering_recipes.items["Processed imp hide"];
 
 
 Object.keys(recipes).forEach(recipe_category => {

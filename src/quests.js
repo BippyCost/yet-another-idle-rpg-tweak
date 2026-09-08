@@ -189,7 +189,7 @@ const questManager = {
 
                 any: {
                     kill: { //by id
-                            "Wolf rat": { target: 10, current: 0, requirements: [],}, 
+                            "Ash Imp": { target: 10, current: 0, requirements: [],}, 
                             "Wolf": {target: 5, current: 0, requirements: [],}
                     },
                     kill_any: {"Pest": {requirements: [], target: , current: ,}}}, //by tags
@@ -533,7 +533,7 @@ quests["Test quest"] = new Quest({
             task_condition: {
                 any: {
                     kill: {
-                        "Wolf rat": {target: 10}
+                        "Ash Imp": {target: 10}
                     }
                 }
             }
@@ -547,7 +547,7 @@ quests["Test quest"] = new Quest({
             task_condition: {
                 any: {
                     kill: {
-                        "Wolf rat": {target: 20}
+                        "Ash Imp": {target: 20}
                     }
                 }
             }

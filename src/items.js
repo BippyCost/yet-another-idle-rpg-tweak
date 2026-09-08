@@ -1438,9 +1438,9 @@ book_stats["Counting Mice"] = new BookData({
 
 //miscellaneous, and useless loot:
 (function(){
-    item_templates["Rat fang"] = new OtherItem({
-        name: "Rat fang",
-        description: "Fang of a huge rat, not very sharp, but can still pierce a human skin if enough force is applied",
+    item_templates["Imp fang"] = new OtherItem({
+        name: "Imp fang",
+        description: "A charred imp fang, not very sharp but still capable of piercing hide",
         value: 8,
         material_type: "animal tooth",
     });
@@ -1497,14 +1497,14 @@ book_stats["Counting Mice"] = new BookData({
 
 //lootable materials
 (function(){
-    item_templates["Rat tail"] = new Material({
-        name: "Rat tail",
-        description: "Tail of a huge rat. Doesn't seem very useful, but maybe some meat could be recovered from it",
+    item_templates["Imp tail"] = new Material({
+        name: "Imp tail",
+        description: "The blackened tail of an imp. It might be useful in a ritual or alchemical mixture",
         value: 4,
     });
-    item_templates["Rat pelt"] = new Material({
-        name: "Rat pelt",
-        description: "Pelt of a huge rat. Fur has terrible quality, but maybe leather could be used for something if you gather more?",
+    item_templates["Imp hide"] = new Material({
+        name: "Imp hide",
+        description: "Charred hide of an ash imp. Rough, but useful when gathered in quantity",
         value: 10,
         material_type: "pelt",
     });
@@ -3802,10 +3802,10 @@ function add_gear_components() {
             }
         });*/
 
-        item_templates["Rat pelt cape"] = new Cape({
-            name: "Rat pelt cape",
+        item_templates["Imp hide cape"] = new Cape({
+            name: "Imp hide cape",
             item_tier: 1,
-            description: "It's a cape... made of wolf rat pelts. Only for poor or insane",
+            description: "A rough cape made from charred imp hides. Only for the desperate or insane",
             value: 100,
             base_stats: {
                 cold_tolerance: {
@@ -4491,13 +4491,13 @@ function add_gear() {
         value: 30,
         material_type: "metal",
     });
-    item_templates["Piece of wolf rat leather"] = new Material({
-        description: "It's slightly damaged and seems useless for anything that requires precise work",
+    item_templates["Piece of imp hide"] = new Material({
+        description: "A charred scrap of imp hide, slightly damaged but useful for rough leatherwork",
         value: 20,
         material_type: "piece of leather",
     });
-    item_templates["Processed rat pelt"] = new Material({
-        description: "Processed pelt of a huge rat. It's of a barely acceptable quality, but it's still a miracle with how terrible the basic material was",
+    item_templates["Processed imp hide"] = new Material({
+        description: "Processed hide of an ash imp. It is barely acceptable, but useful for rough equipment",
         value: 20,
         material_type: "processed pelt",
     });
@@ -4623,8 +4623,8 @@ function add_gear() {
         material_type: "chainmail",
     });
 	
-    item_templates["Scraps of wolf rat meat"] = new Material({
-        description: "Ignoring where they come from and all the attached diseases, they actually look edible. Just remember to cook it first",
+    item_templates["Scraps of imp meat"] = new Material({
+        description: "Charred scraps of imp meat. They look edible in the infernal sense; cook them first",
         value: 8,
         material_type: "meat",
     });
@@ -5020,6 +5020,14 @@ add_gear_components();
 crafting_component_manager.fill_components();
 add_gear();
 setup_ids();
+
+// Keep old save files compatible after the infernal loot rename.
+item_templates["Rat fang"] = item_templates["Imp fang"];
+item_templates["Rat tail"] = item_templates["Imp tail"];
+item_templates["Rat pelt"] = item_templates["Imp hide"];
+item_templates["Piece of wolf rat leather"] = item_templates["Piece of imp hide"];
+item_templates["Processed rat pelt"] = item_templates["Processed imp hide"];
+item_templates["Rat pelt cape"] = item_templates["Imp hide cape"];
 
 export {
     item_templates,

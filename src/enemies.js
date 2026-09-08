@@ -148,75 +148,75 @@ const enemy_abilites = {
     
 
     */
-    enemy_templates["Starving wolf rat"] = new Enemy({
+    enemy_templates["Starving Ash Imp"] = new Enemy({
         name: "Starving Ash Imp",
         description: "A dog-sized imp, starved and weakened by the ash winds",
         xp_value: 1,
         rank: 1,
         size: "small",
-        tags: ["living", "beast", "wolf rat"],
+        tags: ["living", "beast", "ash imp"],
         stats: {health: 20, attack: 4, agility: 5, dexterity: 4, magic: 0, intuition: 5, attack_speed: 0.8, defense: 0},
         loot_list: [
-            {item_name: "Rat tail", chance: 0.08},
-            {item_name: "Rat fang", chance: 0.08},
-            {item_name: "Rat pelt", chance: 0.03}
+            {item_name: "Imp tail", chance: 0.08},
+            {item_name: "Imp fang", chance: 0.08},
+            {item_name: "Imp hide", chance: 0.03}
         ]
     });
 
-    enemy_templates["Wolf rat"] = new Enemy({
+    enemy_templates["Ash Imp"] = new Enemy({
         name: "Ash Imp",
         description: "A dog-sized scavenger imp with ember-bright eyes",
         xp_value: 1,
         rank: 1,
         size: "small",
-        tags: ["living", "beast", "wolf rat"],
+        tags: ["living", "beast", "ash imp"],
         stats: {health: 30, attack: 6, agility: 6, dexterity: 5, intuition: 6, magic: 0, attack_speed: 1, defense: 1},
         loot_list: [
-            {item_name: "Rat tail", chance: 0.1},
-            {item_name: "Rat fang", chance: 0.1},
-            {item_name: "Rat pelt", chance: 0.05},
+            {item_name: "Imp tail", chance: 0.1},
+            {item_name: "Imp fang", chance: 0.1},
+            {item_name: "Imp hide", chance: 0.05},
         ]
     });
-    enemy_templates["Elite wolf rat"] = new Enemy({
+    enemy_templates["Cinder Ravager"] = new Enemy({
         name: "Cinder Ravager",
         description: "A hardened imp, much more ferocious than its lesser kin",
         xp_value: 4,
         rank: 2,
         size: enemy_sizes.SMALL,
-        tags: ["living", "beast", "wolf rat"],
+        tags: ["living", "beast", "ash imp"],
         stats: {health: 80, attack: 32, agility: 30, dexterity: 24, intuition: 24, magic: 0, attack_speed: 1.5, defense: 8},
         loot_list: [
-            {item_name: "Rat tail", chance: 0.15},
-            {item_name: "Rat fang", chance: 0.15},
-            {item_name: "Rat pelt", chance: 0.8},
+            {item_name: "Imp tail", chance: 0.15},
+            {item_name: "Imp fang", chance: 0.15},
+            {item_name: "Imp hide", chance: 0.8},
         ]
     });
-    enemy_templates["Elite wolf rat guardian"] = new Enemy({
+    enemy_templates["Gatefiend Guardian"] = new Enemy({
         name: "Gatefiend Guardian",
         description: "A hulking fiend with charred hide, hooked claws, and pure insanity in its eyes",
         xp_value: 15,
         rank: 4,
         size: enemy_sizes.MEDIUM,
-        tags: ["living", "beast", "wolf rat", "monster"],
+        tags: ["living", "beast", "ash imp", "monster"],
         stats: {health: 600, attack: 60, agility: 50, dexterity: 50, intuition: 50, magic: 0, attack_speed: 1.2, defense: 30},
         loot_list: [
-            {item_name: "Rat tail", chance: 0.2},
-            {item_name: "Rat fang", chance: 0.2},
-            {item_name: "Rat pelt", chance: 0.12},
+            {item_name: "Imp tail", chance: 0.2},
+            {item_name: "Imp fang", chance: 0.2},
+            {item_name: "Imp hide", chance: 0.12},
             {item_name: "Weak monster bone", chance: 0.04},
         ]
     });
-    enemy_templates["Wall rat"] = new Enemy({
+    enemy_templates["Fleshwall Abomination"] = new Enemy({
         name: "Fleshwall Abomination",
         description: "It does not live in the walls. It IS the wall: a writhing mass of teeth and flesh that should not exist",
         xp_value: 50,
         rank: 8,
         size: enemy_sizes.LARGE,
-        tags: ["living", "beast", "wolf rat", "monster", "eldritch"],
+        tags: ["living", "beast", "ash imp", "monster", "eldritch"],
         stats: {health: 4000, attack: 100, agility: 2, dexterity: 120, intuition: 200, magic: 0, attack_speed: 2, attack_count: 4, defense: 20},
         loot_list: [
-            {item_name: "Rat tail", chance: 0.25},
-            {item_name: "Rat fang", chance: 0.25},
+            {item_name: "Imp tail", chance: 0.25},
+            {item_name: "Imp fang", chance: 0.25},
         ],
     });
 
