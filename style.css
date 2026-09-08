@@ -777,6 +777,7 @@ input[type=checkbox], input[type=radio] {
 .inventory_item, .trader_item {
 	 font-size: 13px;
 	 display: inline-block;
+	 white-space: nowrap;
 }
 
 .equipped_item_control {
@@ -807,6 +808,10 @@ input[type=checkbox], input[type=radio] {
 
 .inventory_item_name, .equipped_item_name {
 	display: inline-block;
+	white-space: nowrap;
+	max-width: 270px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .inventory_item_control {
@@ -819,6 +824,7 @@ input[type=checkbox], input[type=radio] {
 .item_additional_content {
 	float: right;
 	width: fit-content;
+	white-space: nowrap;
 }
 
 .item_tooltip, .job_tooltip, .location_tooltip, .recipe_tooltip, #export_button_tooltip, .race_choice_tooltip {
@@ -839,7 +845,15 @@ input[type=checkbox], input[type=radio] {
 .item_tooltip, .job_tooltip, .location_tooltip, .recipe_tooltip {
 	max-width: 250px;
 	min-width: 150px;
-	width: max-content;
+	width: 250px;
+	box-sizing: border-box;
+	white-space: normal;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
+}
+
+.item_tooltip * {
+	white-space: normal;
 }
 
 #export_button_tooltip {
@@ -906,7 +920,12 @@ input[type=checkbox], input[type=radio] {
 	padding: 5px;
 	position: fixed;
 	z-index: 10;
-	width: 300px;
+	width: 280px;
+	max-width: 280px;
+	box-sizing: border-box;
+	white-space: normal;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
 	pointer-events: none;
 	top: var(--stat_tooltip_top);
 	left: var(--stat_tooltip_left);
@@ -920,7 +939,7 @@ input[type=checkbox], input[type=radio] {
 	display: block;
 }
 
-#character_health_tooltip, #character_stamina_tooltip, #character_xp_tooltip {
+#character_health_tooltip, #character_stamina_tooltip, #character_mana_tooltip, #character_xp_tooltip {
 	display: none;
 	background-color: var(--tooltip_background_color);
 	border-radius: 10px;
@@ -929,14 +948,18 @@ input[type=checkbox], input[type=radio] {
 	z-index: 10;
 	max-width: 350px;
 	min-width: 100px;
-	width: max-content;
+	width: 280px;
+	box-sizing: border-box;
+	white-space: normal;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
 	pointer-events: none;
 	top: var(--bar_tooltip_top);
 	left: var(--bar_tooltip_left);
 	border: 1px solid white;
 }
 
-#character_health_div:hover #character_health_tooltip, #character_stamina_div:hover #character_stamina_tooltip, #character_xp_div:hover #character_xp_tooltip {
+#character_health_div:hover #character_health_tooltip, #character_stamina_div:hover #character_stamina_tooltip, #character_mana_div:hover #character_mana_tooltip, #character_xp_div:hover #character_xp_tooltip {
 	display: block;
 }
 
@@ -1255,6 +1278,8 @@ input[type=checkbox], input[type=radio] {
 	padding-top: 2px;
 	margin-left: 1px;
 	outline: 1px solid white;
+	white-space: nowrap;
+	box-sizing: border-box;
 }
 
 .loot_slots_div {
@@ -1265,12 +1290,14 @@ input[type=checkbox], input[type=radio] {
 		text-align: right;
 		display: inline-block;
 		width: 63px;
+		white-space: nowrap;
 	}
 
 	.stat_name {
 		display: inline-block;
 		width: 100px;
 		padding-left: 4px;
+		white-space: nowrap;
 	}
 	.loot_name {
 		display: inline-block;
@@ -1645,15 +1672,18 @@ i {
 .trade_ammount_button {
 	cursor: pointer;
 	font-weight: bold;
-	font-size: 14px;
-	padding-left: 5px;
+	font-size: 12px;
+	padding-left: 2px;
+	padding-right: 2px;
 	float: left;
+	white-space: nowrap;
 }
 .trade_ammount_buttons {
 	display: var(--trade_ammount_button_display);
-	width: 55px;
+	width: 70px;
 	vertical-align: bottom;
 	text-align: right;
+	white-space: nowrap;
 }
 
 .trader_item_other, .trader_item_loot, .trader_item_material, .trader_item_component, .trader_item_book {
@@ -1680,7 +1710,7 @@ i {
 	width: 400px;
 	text-align: center;
 	position: absolute;
-	top: 353px;
+	top: 383px;
 	background-color: #261019;
 	float: left;
 }
@@ -1820,7 +1850,7 @@ i {
 #basic_character_info_div {
     width: 400px;
     height: 130px;
-    z-index: 1;
+	z-index: 3;
 }
 
 #bottom_panel_div {
@@ -1838,9 +1868,10 @@ i {
 #character_div {
     width: 400px;
     top: 136px;
-    height: 210px;
+	height: 240px;
 	max-width: 400px;
-	max-height: 300px;
+	max-height: 340px;
+	z-index: 2;
     border-top: none;
 }
 
@@ -1954,17 +1985,20 @@ i {
 	margin: auto;
 	width: 350px;
 	position: relative;
-	top: 3px;
+	top: 9px;
 	display: none;
 }
 
 #character_tools_div {
 	display: none;
+	position: relative;
+	top: 9px;
 }
 
 #character_stats_div {
 	width: 350px;
 	margin: auto;
+	padding-top: 9px;
 }
 
 #character_control_div {
@@ -1975,7 +2009,7 @@ i {
 
 #character_effects{
 	position: absolute;
-	top: 158px;
+	top: 166px;
 	left: 100px;
 }
 	#effects_div {
@@ -2058,7 +2092,7 @@ i {
 #combat_div {
 	width: 400px;
 	height: 560px;
-	position: relative;
+	position: absolute;
 	left: 410px;
 	top: 68px;
 }
@@ -2089,7 +2123,7 @@ i {
 					.enemy_stat, .attack_stat {
 						display: inline-block;
 						text-align: left;
-						font-size: 12px;
+						font-size: 11px;
 						overflow: hidden;
 						white-space: nowrap;
 					}
@@ -2140,7 +2174,7 @@ i {
 
 	#character_combat_management{
 		width: 400px;
-		top: 386px;
+		top: 416px;
 		display: var(--character_combat_div_display);
 	}
 		#character_stance_name {
@@ -2217,7 +2251,7 @@ i {
 #inventory_div {
 	width: 400px;
 	height: 381px;
-	top: 379px;
+	top: 409px;
 	display: var(--inventory_div_display);
 }
 
@@ -2336,20 +2370,28 @@ i {
 					display: flex;
 					box-shadow: 0 -1px 0 gray, 0 1px 0 gray;
 					margin-bottom: 1px;
+					box-sizing: border-box;
+					white-space: nowrap;
 				}
 				.bestiary_entry_div:hover, .anthology_entry_div:hover {
 					background-color: var(--active_button_color);
 				}
 					.bestiary_entry_name, .anthology_entry_name {
 						float: left;
-						width:295px;
+						width:290px;
+						flex: 0 0 290px;
 						text-align: left;
 						padding-left: 5px;
+						box-sizing: border-box;
+						overflow: hidden;
+						text-overflow: ellipsis;
 					}
 					.bestiary_entry_kill_count {
 						text-align: right;
 						width:90px;
+						flex: 0 0 90px;
 						padding-right: 5px;
+						box-sizing: border-box;
 					}
 
 					.bestiary_entry_tooltip, .anthology_entry_tooltip {
@@ -2655,14 +2697,16 @@ i {
 	}
 		.message_control_button {
 			float: left;
-			padding: 3px;
-			padding-left: 4px;
-			padding-right: 4px;
-			min-width: 40px;
+			padding: 3px 2px;
+			min-width: 0;
+			width: 63px;
+			box-sizing: border-box;
 			text-align: center;
 			outline: 1px solid white;
 			margin: 1px;
 			cursor: pointer;
+			font-size: 11px;
+			white-space: nowrap;
 		}
 		.message_control_button:hover:not(.active_selection_button) {
 			background-color: var(--hovered_button_color);

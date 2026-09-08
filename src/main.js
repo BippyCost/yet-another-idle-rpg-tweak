@@ -435,7 +435,8 @@ function option_expo_threshold(option) {
 function option_xp_multiplier(option) {          // <- new, goes right here
     const input = document.getElementById("options_xp_multiplier");
     game_options.xp_multiplier = Number(option ?? input.value ?? 1);
-    if (option !== undefined) input.value = option;
+    if (option !== undefined) input.value = game_options.xp_multiplier;
+    input.nextElementSibling.value = `${game_options.xp_multiplier}x`;
 
     character.xp_bonuses.multiplier.settings.all = game_options.xp_multiplier;
     character.xp_bonuses.multiplier.settings.all_skill = game_options.xp_multiplier;
