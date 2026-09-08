@@ -5901,25 +5901,21 @@ if(!is_on_dev() && save_key in localStorage || is_on_dev() && (dev_save_key in l
 if(!is_loading_error) {
     set_loading_screen_progress("Translating the meows");
     await translationManager.init(language);
-    set_loading_screen_progress("Waiting for you to click 'PLAY'");
     translationManager.translateUI(language);
     hide_loading_text();
-    show_play_button();
+    hide_loading_screen();
 } else {
     hide_loading_text();
     await translationManager.init(language);
     translationManager.translateUI(language);
-    set_play_button_text("Play...?");
-    show_play_button();
+    hide_loading_screen();
 }
-
-play_button.addEventListener("click", hide_loading_screen);
 
 if(!global_flags.is_hero_created && do_hero_creation) {
     characterCreator.fill_creation_panel();
     //run is triggered from confirming hero creation
 } else {
-    play_button.addEventListener("click", run);
+    run();
     characterCreator.remove_creation_panel();
 }
 
@@ -5963,10 +5959,6 @@ function add_all_active_effects(duration){
 
 update_displayed_equipment();
 sort_displayed_inventory({sort_by: "name", target: "character"});
-
-if(game_options.skip_play_button) {
-    play_button.click();
-}
 
 if(is_on_dev()) {
     log_message("It looks like you are playing on the dev release. It is recommended to keep the developer console open (in Chrome/Firefox/Edge it's at F12 => 'Console' tab) in case of any errors/warnings appearing in there.", "notification");

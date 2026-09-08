@@ -773,35 +773,35 @@ function get_location_type_penalty(type, stage, stat, category) {
 (function(){ 
     locations["Village"] = new Location({ 
         getDescription: function() {
-            let base_text = "Medium-sized village, built at the foot of the mountains, with rocks preventing any expansions towards north. It's surrounded by many fields, "
+            let base_text = "A fortified infernal outpost built around a black basalt spire. Ash drifts over the surrounding slag fields, "
             //todo: change text after bridge is built
             if(locations["Infested field"].enemy_groups_killed >= 5 * locations["Infested field"].enemy_count) { 
-                base_text += "a few of them infested by huge rats, which, while an annoyance, don't seem possible to fully eradicate. ";
+                base_text += "a few of them crawling with lesser fiends, which, while an annoyance, don't seem possible to fully eradicate. ";
             } else if(locations["Infested field"].enemy_groups_killed >= 2 * locations["Infested field"].enemy_count) {
-                base_text += "many of them infested by huge rats. ";
+                base_text += "many of them crawling with lesser fiends. ";
             } else {
-                base_text += "most of them infested by huge rats. ";
+                base_text += "most of them crawling with lesser fiends. ";
             }
 
             return base_text + `There is a relatively calm, somewhat small river south of it with ${locations["Village"].actions["bridge construction"].is_finished?"a sturdy, impressive bridge over it":"no bridges over it"} ` 
-                             + `, and with some old structures on the other side, clearly not used for years if not longer. `
-                             + `Many villagers seem to have nothing to do ${locations["Infested woods"].enemy_groups_killed >= locations["Infested woods"].enemy_count?"but it's less than it used to be, with some already occupied on the other side of the river.":"and are just sitting around."}`;
+                             + `, and with a collapsed obsidian bridge on the other side, clearly untouched for centuries. `
+                             + `Many fiends seem to have nothing to do ${locations["Infested woods"].enemy_groups_killed >= locations["Infested woods"].enemy_count?"but it's less than it used to be, with some already occupying the bloodwood beyond.":"and are just waiting for the next war."}`;
         },
         getBackgroundNoises: function() {
-            let noises = ["*You hear some rustling*"];
+            let noises = ["*Ash whispers across the basalt*"];
             if(current_game_time.hour > 4 && current_game_time.hour <= 20) {
-                noises.push("Anyone seen my cow?", "Mooooo!", "Tomorrow I'm gonna fix the roof", "Look, a bird!");
+                noises.push("Who took the brimstone shipment?", "The furnaces need more coal!", "Tomorrow we reinforce the gate", "Look, an omen!");
 
                 if(locations["Infested field"].enemy_groups_killed <= 3) {
-                    noises.push("These nasty rats almost ate my cat!");
+                    noises.push("These scavenger fiends nearly ate my imp!");
                     if(is_rat()) {
                         //you can blame Mercurius for this line
                         //pasted 3 times for increased chance
-                        noises.push("These nasty rats almost ate my rat!","These nasty rats almost ate my rat!","These nasty rats almost ate my rat!");
+                        noises.push("These scavenger fiends nearly ate my imp!","These scavenger fiends nearly ate my imp!","These scavenger fiends nearly ate my imp!");
                     }
                 } else if(is_rat()) {
                     //also possible after clear condition is done, but less common
-                    noises.push("These nasty rats almost ate my rat!");
+                    noises.push("These scavenger fiends nearly ate my imp!");
                 }
             }
 
@@ -822,7 +822,7 @@ function get_location_type_penalty(type, stage, stat, category) {
         dialogues: ["village elder", "village guard", "old craftsman"],
         traders: ["village trader"],
         market_region: "Village",
-        name: "Village", 
+            name: "Cinderwatch Outpost", 
         crafting: {
             is_unlocked: true, 
             use_text: "Try to craft something", 
@@ -840,8 +840,8 @@ function get_location_type_penalty(type, stage, stat, category) {
 
     locations["Shack"] = new Location({
         connected_locations: [{location: locations["Village"], custom_text: "Go outside to [Village]", travel_time: 10}],
-        description: "This small shack was the only spare building in the village. It's surprisingly tidy",
-        name: "Shack",
+        description: "A cramped cell carved into the basalt wall, warmed by a vein of living ember. It is surprisingly tidy.",
+        name: "Cinder Cell",
         is_unlocked: false,
         housing: {
             is_unlocked: true,
@@ -912,13 +912,13 @@ function get_location_type_penalty(type, stage, stat, category) {
     locations["Eastern mill"].connected_locations.push({location: locations["Eastern storehouse"], travel_time: 10});
 
     locations["Infested field"] = new Combat_zone({
-        description: "Field infested with wolf rats. You can see the grain stalks move as these creatures scurry around", 
+        description: "An ash field infested with scavenger imps. You can see the blackened stalks move as the creatures scurry around.", 
         enemy_count: 15, 
         enemies_list: ["Starving wolf rat", "Wolf rat"],
         types: [{type: "open", stage: 1, xp_gain: 1}],
         enemy_stat_variation: 0.1,
         is_unlocked: false, 
-        name: "Infested field", 
+        name: "Scorched Fields", 
         parent_location: locations["Village"],
         first_reward: {
             xp: 10,
@@ -948,7 +948,7 @@ function get_location_type_penalty(type, stage, stat, category) {
     locations["Village"].connected_locations.push({location: locations["Infested field"], travel_time: 15});
 
     locations["Infested woods"] = new Combat_zone({
-        description: "",
+        description: "A dead bloodwood where the trees burn from within and lesser demons swarm beneath the red canopy.",
         enemy_count: 40,
         enemies_list: ["Huge dragonfly"],
         enemy_groups_list: [{enemies: ["Dragonfly queen", "Huge dragonfly", "Huge dragonfly", "Huge dragonfly", "Huge dragonfly", "Huge dragonfly"]}],
@@ -956,8 +956,8 @@ function get_location_type_penalty(type, stage, stat, category) {
         enemy_group_size: [6,6],
         enemy_stat_variation: 0.2,
         is_unlocked: false,
-        name: "Infested woods",
-        leave_text: "Run back towards the bridge and to the village",
+        name: "Bloodwood Verge",
+        leave_text: "Run back towards the gate and to the outpost",
         parent_location: locations["Village"],
         first_reward: {
             xp: 1500,
@@ -994,7 +994,7 @@ function get_location_type_penalty(type, stage, stat, category) {
             return noises;
         },
         temperature_range_modifier: 0.8,
-        name: "Nearby cave",
+        name: "Basalt Fissure",
         is_unlocked: false,
         is_under_roof: true,
     });
@@ -1002,14 +1002,14 @@ function get_location_type_penalty(type, stage, stat, category) {
     //remember to always add it like that, otherwise travel will be possible only in one direction and location might not even be reachable
 
     locations["Cave room"] = new Combat_zone({
-        description: "It's full of rats. At least the glowing mushrooms provide some light", 
+        description: "The fissure is full of ash imps. At least the ember-veins provide some light.", 
         enemy_count: 25, 
         types: [{type: "narrow", stage: 1,  xp_gain: 3}, {type: "bright", stage:1}],
         enemies_list: ["Wolf rat"],
         enemy_group_size: [2,3],
         enemy_stat_variation: 0.2,
         is_unlocked: true, 
-        name: "Cave room", 
+        name: "Fissure Mouth", 
         leave_text: "Go back to entrance",
         parent_location: locations["Nearby cave"],
         temperature_range_modifier: 0.7,
@@ -1037,14 +1037,14 @@ function get_location_type_penalty(type, stage, stat, category) {
     locations["Nearby cave"].connected_locations.push({location: locations["Cave room"], travel_time: 5});
 
     locations["Cave depths"] = new Combat_zone({
-        description: "It's dark. And full of rats", 
+        description: "It is dark, hot, and full of hungry fiends.", 
         enemy_count: 40,
         types: [{type: "narrow", stage: 1,  xp_gain: 3}, {type: "dark", stage: 2, xp_gain: 3}],
         enemies_list: ["Wolf rat"],
         enemy_group_size: [5,8],
         enemy_stat_variation: 0.2,
         is_unlocked: false, 
-        name: "Cave depths", 
+        name: "Ember Depths", 
         leave_text: "Climb out",
         parent_location: locations["Nearby cave"],
         first_reward: {
@@ -1066,14 +1066,14 @@ function get_location_type_penalty(type, stage, stat, category) {
     });
     
     locations["Hidden tunnel"] = new Combat_zone({
-        description: "There is, in fact, even more rats here", 
+        description: "There are, in fact, even more fiends here.", 
         enemy_count: 50, 
         types: [{type: "narrow", stage: 1,  xp_gain: 3}, {type: "dark", stage: 3, xp_gain: 1}],
         enemies_list: ["Elite wolf rat"],
         enemy_group_size: [1,2],
         enemy_stat_variation: 0.2,
         is_unlocked: false, 
-        name: "Hidden tunnel", 
+        name: "Sootbound Tunnel", 
         leave_text: "Retreat for now",
         parent_location: locations["Nearby cave"],
         first_reward: {
@@ -1090,14 +1090,14 @@ function get_location_type_penalty(type, stage, stat, category) {
         unlock_text: "As the wall falls apart, you find yourself in front of a new tunnel, leading even deeper. And of course, it's full of wolf rats."
     });
     locations["Pitch black tunnel"] = new Combat_zone({
-        description: "There is no light here. Only rats",
+        description: "There is no light here. Only claws, heat, and breathing.",
         enemy_count: 50,
         types: [{type: "narrow", stage: 1,  xp_gain: 6}, {type: "dark", stage: 3, xp_gain: 3}],
         enemies_list: ["Elite wolf rat"],
         enemy_group_size: [6,8],
         enemy_stat_variation: 0.2,
         is_unlocked: false,
-        name: "Pitch black tunnel",
+        name: "Pitch Black Descent",
         leave_text: "Retreat for now",
         parent_location: locations["Nearby cave"],
         first_reward: {
@@ -1129,7 +1129,7 @@ function get_location_type_penalty(type, stage, stat, category) {
         enemy_group_size: [6,8],
         enemy_stat_variation: 0.2,
         is_unlocked: false,
-        name: "Mysterious gate", 
+        name: "Sealed Hellgate", 
         leave_text: "Get away",
         parent_location: locations["Nearby cave"],
         first_reward: {
@@ -1165,7 +1165,7 @@ function get_location_type_penalty(type, stage, stat, category) {
         enemy_group_size: [4,4], //4, because they are on all 4 sides - left, right, above, below
         enemy_stat_variation: 0.2,
         is_unlocked: false,
-        name: "Writhing tunnel", 
+        name: "Living Chasm", 
         leave_text: "Run away...",
         parent_location: locations["Nearby cave"],
         first_reward: {
@@ -1208,10 +1208,10 @@ There's another gate on the wall in front of you, but you have a strange feeling
 
     locations["Forest road"] = new Location({ 
         connected_locations: [{location: locations["Village"], travel_time: 240}],
-        description: "Old trodden road leading through a dark forest, the only path connecting the village to the town. You can hear some animals from the surrounding woods",
-        name: "Forest road",
+        description: "An old obsidian causeway through the ashwood, the only path from the outpost toward the outer circles. You hear things moving beneath the roots.",
+        name: "Obsidian Causeway",
         getBackgroundNoises: function() {
-            let noises = ["*You hear some rustling*", "Roar!", "*You almost tripped on some roots*", "*You hear some animal running away*"];
+            let noises = ["*You hear something whispering under the ash*", "Roar!", "*You almost tripped on a blackened root*", "*Something flees through the smoke*"];
 
             return noises;
         },
@@ -1220,12 +1220,12 @@ There's another gate on the wall in front of you, but you have a strange feeling
     locations["Village"].connected_locations.push({location: locations["Forest road"], custom_text: "Leave the village towards [Forest road]", travel_time: 240});
 
     locations["Forest"] = new Combat_zone({
-        description: "Forest surrounding the village, a dangerous place", 
+        description: "Ashwood surrounding the outpost, a dangerous place where lesser demons hunt between burning roots.", 
         enemies_list: ["Starving wolf", "Young wolf"],
         types: [{type: "narrow", stage: 1, xp_gain: 1}],
         enemy_count: 30, 
         enemy_stat_variation: 0.2,
-        name: "Forest", 
+        name: "Ashwood", 
         parent_location: locations["Forest road"],
         first_reward: {
             xp: 60,
@@ -1239,14 +1239,14 @@ There's another gate on the wall in front of you, but you have a strange feeling
     locations["Forest road"].connected_locations.push({location: locations["Forest"], custom_text: "Leave the safe path and walk into the [Forest]", travel_time: 30});
 
     locations["Deep forest"] = new Combat_zone({
-        description: "Deeper part of the forest, a dangerous place", 
+        description: "The deeper ashwood, where the smoke blots out the sky and stronger fiends claim the hunting grounds.", 
         enemies_list: ["Wolf", "Starving wolf", "Young wolf"],
         types: [{type: "narrow", stage: 1, xp_gain: 2}],
         enemy_count: 50, 
         enemy_group_size: [2,3],
         enemy_stat_variation: 0.2,
         is_unlocked: false,
-        name: "Deep forest", 
+        name: "Deep Ashwood", 
         parent_location: locations["Forest road"],
         first_reward: {
             xp: 300,
@@ -1266,13 +1266,13 @@ There's another gate on the wall in front of you, but you have a strange feeling
     locations["Forest road"].connected_locations.push({location: locations["Deep forest"], custom_text: "Venture into the [Deep forest]", travel_time: 60});
 
     locations["Forest clearing"] = new Combat_zone({
-        description: "A surprisingly big clearing hidden in the northern part of the forest, covered with very tall grass and filled with a mass of wild boars",
+        description: "A wide clearing hidden in the northern ashwood, carpeted in black grass and claimed by a mass of tusked hellboars",
         enemies_list: ["Boar"],
         enemy_count: 50,
         enemy_group_size: [4,7],
         is_unlocked: false,
         enemy_stat_variation: 0.2,
-        name: "Forest clearing", 
+        name: "Hellboar Hollow", 
         types: [{type: "open", stage: 2, xp_gain: 7}],
         parent_location: locations["Forest road"],
         first_reward: {

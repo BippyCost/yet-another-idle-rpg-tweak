@@ -149,8 +149,8 @@ const enemy_abilites = {
 
     */
     enemy_templates["Starving wolf rat"] = new Enemy({
-        name: "Starving wolf rat",
-        description: "Rat with size of a dog, starved and weakened",
+        name: "Starving Ash Imp",
+        description: "A dog-sized imp, starved and weakened by the ash winds",
         xp_value: 1,
         rank: 1,
         size: "small",
@@ -164,8 +164,8 @@ const enemy_abilites = {
     });
 
     enemy_templates["Wolf rat"] = new Enemy({
-        name: "Wolf rat",
-        description: "Rat with size of a dog",
+        name: "Ash Imp",
+        description: "A dog-sized scavenger imp with ember-bright eyes",
         xp_value: 1,
         rank: 1,
         size: "small",
@@ -178,8 +178,8 @@ const enemy_abilites = {
         ]
     });
     enemy_templates["Elite wolf rat"] = new Enemy({
-        name: "Elite wolf rat",
-        description: "Rat with size of a dog, much more ferocious than its relatives",
+        name: "Cinder Ravager",
+        description: "A hardened imp, much more ferocious than its lesser kin",
         xp_value: 4,
         rank: 2,
         size: enemy_sizes.SMALL,
@@ -192,8 +192,8 @@ const enemy_abilites = {
         ]
     });
     enemy_templates["Elite wolf rat guardian"] = new Enemy({
-        name: "Elite wolf rat guardian",
-        description: "It's no longer dog-sized, but rather around the size of an average wolf, with thicker skin, longer claws and pure insanity in the eyes",
+        name: "Gatefiend Guardian",
+        description: "A hulking fiend with charred hide, hooked claws, and pure insanity in its eyes",
         xp_value: 15,
         rank: 4,
         size: enemy_sizes.MEDIUM,
@@ -207,8 +207,8 @@ const enemy_abilites = {
         ]
     });
     enemy_templates["Wall rat"] = new Enemy({
-        name: "Wall rat",
-        description: "They don't live in the walls, they ARE the walls. Insane writhing masses of teeth, fangs, and tails, that make no logical sense. An abomination that cannot exist, and yet it does",
+        name: "Fleshwall Abomination",
+        description: "It does not live in the walls. It IS the wall: a writhing mass of teeth and flesh that should not exist",
         xp_value: 50,
         rank: 8,
         size: enemy_sizes.LARGE,

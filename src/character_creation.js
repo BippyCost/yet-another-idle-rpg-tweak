@@ -118,7 +118,8 @@ class CharacterCreator {
     }
 
     remove_creation_panel() {
-        document.getElementById("hero_creation_panel").remove();
+        const creation_panel = document.getElementById("hero_creation_panel");
+        creation_panel?.remove();
     }
 }
 
